@@ -2,7 +2,7 @@ import React,{useState,useRef} from 'react'
 import styles from './MainComp.module.css'
 
 export default function MainComp() {
-    const [ingredients, setIngredients] = useState(["Chicken", "Oregano", "Tomatoes"])
+    const [ingredients, setIngredients] = useState([])
     const userInput = useRef();
 
     function handleUserInput(e) {
