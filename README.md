@@ -1,12 +1,50 @@
-# React + Vite
+# 🧠 AI Recipe Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, interactive React app that helps users discover recipes based on the ingredients they already have. Just enter a few items — like `chicken`, `onions`, or `cheese` — and let the AI suggest a creative, delicious recipe you can make right now.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## Expanding the ESLint configuration
+👉 [View it on GitHub Pages](https://github.com/ZainAchak/ChefX)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- ✅ Enter multiple ingredients quickly
+- ✅ Uses AI to suggest a recipe based on your input
+- ✅ Clean and responsive single-page UI
+- ✅ Built with React + Vite
+- ✅ One-click deployment with GitHub Pages
+
+---
+
+## 🚀 Getting Started
+
+This web app helps you decide **what to cook based on the ingredients you already have**. Just type in a few ingredients and the app sends them to an AI model, which responds with a recipe idea.
+
+Perfect for:
+
+- 🧊 Cleaning out the fridge
+- 🍲 Cooking with leftovers
+- 🛒 Avoiding unnecessary grocery runs
+
+No setup, no signups — just type and cook. 🍽️✨
+
+---
+
+## 🛠️ Tech Stack
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- CSS Modules
+- GitHub Pages (via `gh-pages` package)
+
+---
+
+## 📃 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
