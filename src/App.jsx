@@ -1,10 +1,13 @@
 import './App.css'
+import HeaderComp from './components/HeaderComp/HeaderComp'
+import MainComp from './components/MainComp/MainComp'
 
 function App() {
 
   return (
     <>
-      
+      <HeaderComp/>
+      <MainComp/>
     </>
   )
 }

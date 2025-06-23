@@ -1,0 +1,119 @@
+main{
+    margin: inherit;
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    border-radius: 0 0 20px 20px;
+}
+
+.userInputForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 30px 0;
+    gap: 12px;
+    width: 100%;
+}
+
+.userInputForm > input{
+    font-size: 1.1rem;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.301);
+    flex-grow: 1;
+    min-width: 100px;
+    max-width: 400px;
+}
+
+.userInputForm > button{
+    font-size: 1.1rem;
+    padding: 10px 35px;
+    color: white;
+    background-color: rgb(34, 33, 33);
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(5, 122, 218, 0.781);
+    transition: box-shadow 0.3s ease;
+    flex-grow: 1;
+    min-width: 210px;
+    max-width: 250px;
+}
+
+.userInputForm > button:hover{
+    background-color: rgba(34, 33, 33, 0.856);
+}
+
+.userInputForm > button:active{
+    box-shadow: 1px 1px 1px rgba(5, 122, 218, 0.781);
+}
+
+.addData {
+    margin-right: 2rem;
+}
+
+
+.addData > h1{
+    align-self: center;
+    margin-left: 20px;
+}
+.addData > ul{
+    font-size: 1.2rem;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: rgba(0, 0, 0, 0.685);
+    margin-bottom: 10px;
+}
+
+.addData > ul > li::marker{
+    font-size: 1.5rem;
+    color: rgb(71, 71, 71);
+}
+
+.description {
+  margin: 30px 25px 0 25px;
+  border: 1px solid rgba(0, 0, 0, 0.089);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+  line-height: 25px;
+  border-radius: 40px 0 40px 0;
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.144);
+}
+
+.noteText {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+
+@media (max-width:500px){
+    .userInputForm{
+        flex-direction: column;
+        margin: 40px 0 30px 0;
+        gap: 20px;
+    }
+    .userInputForm > button{
+        min-width: 220px;
+    }
+
+    .userInputForm > input{
+        min-width: 350px;
+    }
+    .description {
+        margin: 30px 15px -10px 15px;
+        font-size: 0.9rem;
+    }
+    .addData > h1{
+        font-size: 1.8rem;
+        align-self: center;
+        margin-left: 20px;
+    }
+}
