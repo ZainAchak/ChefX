@@ -1,21 +1,18 @@
 import React,{useState,useRef, useEffect} from 'react'
 import styles from './MainComp.module.css'
+import ShowRecipe from './ShowRecipe';
 
 export default function MainComp() {
     const [ingredients, setIngredients] = useState([])
+    const [recipeShow, setrecipeShow] = useState(false);
     const userInput = useRef();
+    const recipeRef = useRef(null);
 
-    const textRef = useRef(null);
+    
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (textRef.current) {
-        textRef.current.style.borderRight = 'none'; // Hide cursor after typing
-      }
-    }, 2000); // match duration of typing animation
-
-    return () => clearTimeout(timer); // Cleanup
-  }, []);
+    // const scrollToRecipe = () => {
+    //     recipeRef.current?.scrollIntoView({ behavior: 'smooth' }); 
+    // };
 
     // function handleUserInput(e) {
     //     e.preventDefault();
@@ -44,6 +41,12 @@ export default function MainComp() {
             //console.log(ingredients)
         }
     }
+
+    useEffect(() => {
+            if (recipeShow && recipeRef.current) {
+            recipeRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, [recipeShow]);
 
     return(
         <main>
@@ -79,8 +82,9 @@ export default function MainComp() {
                         <h3>Ready for a recipe?</h3>
                         <p>Generate a recipe from your list of ingredients</p>
                     </div>
-                    <button className={styles.recipeBtn}>Get a recipe</button>
+                    <button onClick={()=> {setrecipeShow(!recipeShow)}} className={styles.recipeBtn}>{"Get a recipe"}</button>
                 </div>}
+                <ShowRecipe recipeShow={recipeShow} recipeRef={recipeRef}/>
             </div>
         </main>
         
