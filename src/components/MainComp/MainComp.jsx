@@ -1,6 +1,7 @@
 import React,{useState,useRef, useEffect} from 'react'
 import styles from './MainComp.module.css'
 import ShowRecipe from './ShowRecipe';
+import ShowIngredients from './ShowIngredients';
 
 export default function MainComp() {
     const [ingredients, setIngredients] = useState([])
@@ -71,20 +72,14 @@ export default function MainComp() {
                     >+ Add Ingredient</button>
             </form>
             <div className={styles.addData}>
-                <h1 style={{display: ingredients.length > 0 ? "block" : "none"}}>Incredients on hand: </h1>
-                <ul>
-                    {ingredients.map((item,index)=>(
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-                {ingredients.length > 3 && <div className={styles.getRecipeContainer}>
-                    <div>
-                        <h3>Ready for a recipe?</h3>
-                        <p>Generate a recipe from your list of ingredients</p>
-                    </div>
-                    <button onClick={()=> {setrecipeShow(!recipeShow)}} className={styles.recipeBtn}>{"Get a recipe"}</button>
-                </div>}
-                <ShowRecipe recipeShow={recipeShow} recipeRef={recipeRef}/>
+                <ShowIngredients 
+                    ingredients={ingredients} 
+                    setrecipeShow={setrecipeShow} 
+                    recipeShow={recipeShow}/>
+
+                <ShowRecipe 
+                    recipeShow={recipeShow} 
+                    recipeRef={recipeRef}/>
             </div>
         </main>
         
