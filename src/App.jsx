@@ -1,4 +1,3 @@
-import './App.css'
 import HeaderComp from './components/HeaderComp/HeaderComp'
 import MainComp from './components/MainComp/MainComp'
 
