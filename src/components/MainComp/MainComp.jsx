@@ -2,29 +2,26 @@ import React,{useState,useRef, useEffect} from 'react'
 import styles from './MainComp.module.css'
 import ShowRecipe from './ShowRecipe';
 import ShowIngredients from './ShowIngredients';
+import { getRecipeFromMistral } from './ai';
 
 export default function MainComp() {
-    const [ingredients, setIngredients] = useState([])
+    const [ingredients, setIngredients] = useState(["Tomato","Potato","Chicken","Eggs"])
     const [recipeShow, setrecipeShow] = useState(false);
+    const [aiRecipe, setAiRecipe] = useState();
+    const [showLoading,setShowloading] = useState(false);
     const userInput = useRef();
     const recipeRef = useRef(null);
+    const loaderRef = useRef(null);
 
-    
 
-    // const scrollToRecipe = () => {
-    //     recipeRef.current?.scrollIntoView({ behavior: 'smooth' }); 
-    // };
-
-    // function handleUserInput(e) {
-    //     e.preventDefault();
-    //     const inputValue = userInput.current.value.trim();
-    //     if(inputValue !== ""){
-    //         setIngredients(prevIng => [...prevIng,inputValue])
-    //         userInput.current.value = "";
-    //         userInput.current.focus();
-    //         console.log(ingredients)
-    //         }
-    // }
+    async function handleAI() {
+        setShowloading(true);
+        setAiRecipe(await getRecipeFromMistral(ingredients))
+        setShowloading(false)
+        if (!recipeShow){
+            setrecipeShow(!recipeShow);
+        }
+    }
 
     function handleFormData(formData) {
         const userInputForm = formData.get("userInput").trim()
@@ -43,11 +40,17 @@ export default function MainComp() {
         }
     }
 
+    useEffect(()=>{
+        if(showLoading){
+            loaderRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+    },[showLoading])
+
     useEffect(() => {
             if (recipeShow && recipeRef.current) {
-            recipeRef.current.scrollIntoView({ behavior: 'smooth' });
+                recipeRef.current.scrollIntoView({ behavior: 'smooth' });  
             }
-        }, [recipeShow]);
+        }, [recipeShow,aiRecipe]);
 
     return(
         <main>
@@ -71,15 +74,21 @@ export default function MainComp() {
                     // onClick={(e)=>handleUserInput(e)}
                     >+ Add Ingredient</button>
             </form>
+
             <div className={styles.addData}>
                 <ShowIngredients 
                     ingredients={ingredients} 
                     setrecipeShow={setrecipeShow} 
-                    recipeShow={recipeShow}/>
+                    recipeShow={recipeShow}
+                    handleAI={handleAI}/>
+
+                {showLoading && <div ref={loaderRef} className={styles.loader}></div>}
 
                 <ShowRecipe 
                     recipeShow={recipeShow} 
-                    recipeRef={recipeRef}/>
+                    recipeRef={recipeRef}
+                    aiRecipe={aiRecipe}/>
+                
             </div>
         </main>
         

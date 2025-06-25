@@ -1,7 +1,7 @@
 import styles from './MainComp.module.css'
 
 
-export default function ShowIngredients({ingredients,setrecipeShow,recipeShow}) {
+export default function ShowIngredients({ingredients,handleAI}) {
     return (
         <>
             <div 
@@ -25,7 +25,7 @@ export default function ShowIngredients({ingredients,setrecipeShow,recipeShow}) 
                     </div>
 
                     <button 
-                        onClick={()=> {setrecipeShow(!recipeShow)}} 
+                        onClick={()=> {handleAI()}} 
                         className={styles.recipeBtn}>
                             {"Get a recipe"}
                     </button>
