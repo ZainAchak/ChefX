@@ -5,7 +5,7 @@ import ShowIngredients from './ShowIngredients';
 import { getRecipeFromMistral } from './ai';
 
 export default function MainComp() {
-    const [ingredients, setIngredients] = useState(["Tomato","Potato","Chicken","Eggs"])
+    const [ingredients, setIngredients] = useState([])
     const [recipeShow, setrecipeShow] = useState(false);
     const [aiRecipe, setAiRecipe] = useState();
     const [showLoading,setShowloading] = useState(false);
