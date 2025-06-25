@@ -6,7 +6,7 @@ A simple, interactive React app that helps users discover recipes based on the i
 
 ## 🌐 Live Demo
 
-👉 [View it on GitHub Pages](https://zainachak.github.io/ChefX/)
+👉 [View it on GitHub Pages](https://chefxrecipe.netlify.app/)
 
 ---
 
