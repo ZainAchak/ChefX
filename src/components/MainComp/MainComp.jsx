@@ -75,14 +75,14 @@ export default function MainComp() {
                     >+ Add Ingredient</button>
             </form>
 
-            <div className={styles.addData}>
+            <div ref={loaderRef} className={styles.addData}>
                 <ShowIngredients 
                     ingredients={ingredients} 
                     setrecipeShow={setrecipeShow} 
                     recipeShow={recipeShow}
                     handleAI={handleAI}/>
 
-                {showLoading && <div ref={loaderRef} className={styles.loader}></div>}
+                {showLoading && <div className={styles.loader}></div>}
 
                 <ShowRecipe 
                     recipeShow={recipeShow} 
